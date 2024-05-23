@@ -2,6 +2,9 @@
 import { ref, onMounted } from 'vue';
 import EventService from '@/services/EventService.js'
 import ButtonGoBack from '@/components/GoBackButton.vue'
+import { useRouter } from 'vue-router';
+
+const router = useRouter();
 
 const props = defineProps({
   id: { //accessing with a url param
@@ -18,7 +21,9 @@ onMounted(() => {
       event.value = response.data;
     })
     .catch((error) => {
-      console.log(error);
+      if (error.response.status === 404) {
+        router.push({ name: 'not-found' })
+      }
     })
 })
 </script>
@@ -29,7 +34,7 @@ onMounted(() => {
     <h1>{{ event.title }}</h1>
     <p>{{ event.time }} on {{ event.date }} @ {{ event.location }}</p>
     <p>{{ event.description }}</p>
-    <ButtonGoBack />
+    <ButtonGoBack :case="'normal'" />
   </div>
 </template>
 
