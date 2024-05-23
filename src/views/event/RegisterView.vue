@@ -1,0 +1,57 @@
+<script setup>
+import { ref, onMounted } from 'vue';
+import EventService from '@/services/EventService.js'
+import ButtonGoBack from '@/components/GoBackButton.vue'
+import { useRouter } from 'vue-router';
+
+const router = useRouter();
+
+const props = defineProps({
+  id: { //1- get the id prop send from the EventCard component
+    required: true,
+  }
+})
+
+const event = ref(null);
+
+onMounted(() => {
+  //fetch event (by id) and set local data
+  EventService.getSingleEvent(props.id) //2- get the event information using the API
+    .then((response) => {
+      event.value = response.data; //3- obtain event data, stored in "event" variable and update the event info on template
+    })
+    .catch((error) => {
+      if (error.response.status === 404) {
+        router.push({ name: 'not-found' })
+      }
+    })
+})
+</script>
+
+<template>
+  <!-- v-if to wait until has an event from the API -->
+  <div v-if="event" class="event">
+    <h1>{{ event.title }}</h1>
+    <RouterLink :to="{ name: 'event-details', params: { id } }">
+      Details
+    </RouterLink>
+    |
+    <RouterLink :to="{ name: 'event-register', params: { id } }">
+      Register
+    </RouterLink>
+    |
+    <RouterLink :to="{ name: 'event-edit', params: { id } }">
+      Edit
+    </RouterLink>
+    <p>Register for the event here</p>
+    <ButtonGoBack :case="'normal'" />
+  </div>
+</template>
+
+<style scoped>
+.event {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+</style>

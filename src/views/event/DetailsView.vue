@@ -32,6 +32,17 @@ onMounted(() => {
   <!-- v-if to wait until has an event from the API -->
   <div v-if="event" class="event">
     <h1>{{ event.title }}</h1>
+    <RouterLink :to="{ name: 'event-details', params: { id } }">
+      Details
+    </RouterLink>
+    |
+    <RouterLink :to="{ name: 'event-register', params: { id } }">
+      Register
+    </RouterLink>
+    |
+    <RouterLink :to="{ name: 'event-edit', params: { id } }">
+      Edit
+    </RouterLink>
     <p>{{ event.time }} on {{ event.date }} @ {{ event.location }}</p>
     <p>{{ event.description }}</p>
     <ButtonGoBack :case="'normal'" />
