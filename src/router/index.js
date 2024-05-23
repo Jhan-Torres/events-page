@@ -1,5 +1,4 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import EventListView from '../views/EventListView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -7,14 +6,26 @@ const router = createRouter({
     {
       path: '/',
       name: 'event-list',
-      component: EventListView,
       props: (route) => ({ page: parseInt((route.query.page)|| 1) }),
+      component: () => import('../views/EventListView.vue'),
     },
     {
       path: '/event/:id', //":id" its like a placeholder for route params
       name: 'event-details',
       props: true, //with this we can send in route params as component props
-      component: () => import('../views/EventDetailsView.vue')
+      component: () => import('../views/event/DetailsView.vue')
+    },
+    {
+      path: '/event/:id/register', //":id" its like a placeholder for route params
+      name: 'event-register',
+      props: true, //with this we can send in route params as component props
+      component: () => import('../views/event/RegisterView.vue')
+    },
+    {
+      path: '/event/:id/edit', //":id" its like a placeholder for route params
+      name: 'event-edit',
+      props: true, //with this we can send in route params as component props
+      component: () => import('../views/event/EditView.vue')
     },
     {
       path: '/about',

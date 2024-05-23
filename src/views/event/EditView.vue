@@ -44,7 +44,7 @@ onMounted(() => {
       Edit
     </RouterLink>
     <p>Edit the event here</p>
-    <ButtonGoBack :case="'normal'" />
+    <ButtonGoBack :case="'home'" />
   </div>
 </template>
 

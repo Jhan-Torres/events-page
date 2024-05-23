@@ -45,7 +45,7 @@ onMounted(() => {
     </RouterLink>
     <p>{{ event.time }} on {{ event.date }} @ {{ event.location }}</p>
     <p>{{ event.description }}</p>
-    <ButtonGoBack :case="'normal'" />
+    <ButtonGoBack :case="'home'" />
   </div>
 </template>
 
