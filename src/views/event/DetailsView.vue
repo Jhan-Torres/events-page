@@ -7,7 +7,7 @@ import { useRouter } from 'vue-router';
 const router = useRouter();
 
 const props = defineProps({
-  id: { //accessing with a url param
+  id: { //1- get the id prop send from the EventCard component
     required: true,
   }
 })
@@ -16,9 +16,9 @@ const event = ref(null);
 
 onMounted(() => {
   //fetch event (by id) and set local data
-  EventService.getSingleEvent(props.id)
+  EventService.getSingleEvent(props.id) //2- get the event information using the API
     .then((response) => {
-      event.value = response.data;
+      event.value = response.data; //3- obtain event data, stored in "event" variable and update the event info on template
     })
     .catch((error) => {
       if (error.response.status === 404) {
