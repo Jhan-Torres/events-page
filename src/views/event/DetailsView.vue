@@ -65,7 +65,5 @@ onMounted(() => {
 
 .event-nav-title {
   margin: 0 8px;
-  text-decoration: none;
-  color: black;
 }
 </style>

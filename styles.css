@@ -3,5 +3,14 @@ html {
 }
 
 a {
+  color: black;
+}
+
+.event-nav a {
   text-decoration: none;
+}
+
+.event-nav .router-link-active {
+  color: rgb(94, 112, 168) !important;
+  font-weight: 600;
 }
