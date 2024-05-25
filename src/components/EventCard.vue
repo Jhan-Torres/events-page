@@ -25,11 +25,14 @@ defineProps({
   border: 1px solid #39495c;
   margin-bottom: 1rem;
   border-radius: 0.5rem;
+  background-color: rgb(176, 202, 238);
+  opacity: 0.9;
 }
 
 .event-card:hover {
   transform: scale(1.01);
-  box-shadow: 0 3px 12px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 3px 12px 0 rgba(121, 112, 112, 0.2);
+  border: 1px solid black;
 }
 
 .event-link {

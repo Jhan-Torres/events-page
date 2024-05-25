@@ -1,9 +1,17 @@
 html {
   margin: 0px;
+  background-image: url(src/assets/minimalist-iphone-x-eqrnh4oy40qflnga.webp) ; 
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: initial;
 }
 
 a {
   color: black;
+}
+
+h1 {
+  color: black !important;
 }
 
 .event-nav a {
