@@ -11,6 +11,6 @@ a {
 }
 
 .event-nav .router-link-active {
-  color: rgb(94, 112, 168) !important;
+  color: rgb(94, 112, 168);
   font-weight: 600;
 }
