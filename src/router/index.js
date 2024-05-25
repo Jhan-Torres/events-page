@@ -11,21 +11,26 @@ const router = createRouter({
     },
     {
       path: '/event/:id', //":id" its like a placeholder for route params
-      name: 'event-details',
+      name: 'event-layout',
       props: true, //with this we can send in route params as component props
-      component: () => import('../views/event/DetailsView.vue')
-    },
-    {
-      path: '/event/:id/register', //":id" its like a placeholder for route params
-      name: 'event-register',
-      props: true, //with this we can send in route params as component props
-      component: () => import('../views/event/RegisterView.vue')
-    },
-    {
-      path: '/event/:id/edit', //":id" its like a placeholder for route params
-      name: 'event-edit',
-      props: true, //with this we can send in route params as component props
-      component: () => import('../views/event/EditView.vue')
+      component: () => import('../views/event/Layout.vue'),
+      children: [ //here is where we have the nest components
+        {
+          path: 'details', //"" means the component will be loaded at the root of the parent (in this case "event/:id")
+          name: 'event-details',
+          component: () => import('../views/event/DetailsView.vue'),
+        },
+        {
+          path: 'register',
+          name: 'event-register',
+          component: () => import('../views/event/RegisterView.vue')
+        },
+        {
+          path: 'edit',
+          name: 'event-edit',
+          component: () => import('../views/event/EditView.vue')
+        },
+      ],
     },
     {
       path: '/about',
