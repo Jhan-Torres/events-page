@@ -31,7 +31,8 @@ nav {
   padding: 20px;
   backdrop-filter: blur(30px);
   box-shadow: 0px 0px 30px rgba(227, 228, 237, 0.37);
-  border: 2px solid rgba(255, 255, 225, 0.20);
+  border-bottom: 2px solid rgba(255, 255, 225, 0.20);
+  font-size: large;
 }
 
 nav a {
