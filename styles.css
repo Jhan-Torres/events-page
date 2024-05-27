@@ -1,6 +1,6 @@
 html {
   margin: 0px;
-  background-image: url('src/assets/bg-image.jpeg') ; 
+  background-image: url('src/assets/bg-image.jpeg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: initial;
@@ -14,10 +14,6 @@ a {
   color: black;
 }
 
-h1 {
-  color: black !important;
-}
-
 .event-nav a {
   text-decoration: none;
 }
@@ -25,4 +21,14 @@ h1 {
 .event-nav .router-link-active {
   color: rgb(94, 112, 168);
   font-weight: 600;
+}
+
+.page-title {
+  color: rgb(236, 113, 12);
+  font-weight: 800;
+  opacity: 0.95;
+  backdrop-filter: blur(5px);
+  display: inline-block;
+  padding: 0.7rem 2.5rem;
+  text-shadow: 2px 2px black;
 }
