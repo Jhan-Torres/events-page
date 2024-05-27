@@ -39,4 +39,8 @@ defineProps({
   color: #2c3e50;
   text-decoration: none;
 }
+
+.event-card h2 {
+  font-weight: bold;
+}
 </style>
