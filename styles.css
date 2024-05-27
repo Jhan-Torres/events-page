@@ -1,9 +1,13 @@
 html {
   margin: 0px;
-  background-image: url(src/assets/minimalist-iphone-x-eqrnh4oy40qflnga.webp) ; 
+  background-image: url('src/assets/bg-image.jpeg') ; 
   background-size: cover;
   background-repeat: no-repeat;
   background-position: initial;
+}
+
+body {
+  margin: 0px;
 }
 
 a {
