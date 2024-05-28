@@ -10,7 +10,7 @@ const router = createRouter({
       component: () => import('../views/EventListView.vue'),
     },
     {
-      path: '/event/:id', //":id" its like a placeholder for route params
+      path: '/events/:id', //":id" its like a placeholder for route params
       name: 'event-layout',
       props: true, //with this we can send in route params as component props
       component: () => import('../views/event/Layout.vue'),
@@ -31,6 +31,13 @@ const router = createRouter({
           component: () => import('../views/event/EditView.vue')
         },
       ],
+    },
+    // Redirect to events page "afterEvent(.*)" will capture everything else  
+    {
+      path: '/event/:afterEvent(.*)',
+      redirect: (to) => {
+        return { path: '/events/' + to.params.afterEvent };
+      }
     },
     {
       path: '/about',
