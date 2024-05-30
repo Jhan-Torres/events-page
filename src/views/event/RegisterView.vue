@@ -11,7 +11,7 @@ const props = defineProps({
 const GStore = inject("GStore");
 
 const register = () => {
-  GStore.flashMessage = "You are successfully registered for " + props.event.title;
+  GStore.flashMessage = "Successfully registered for " + props.event.title;
   setTimeout(() => {
     GStore.flashMessage = "";
   }, 2000);
