@@ -59,6 +59,11 @@ const router = createRouter({
       name: '404',
       component: () => import('../views/NotFound.vue'),
       props: true
+    },
+    {
+      path: '/network-error',
+      name: 'network-error',
+      component: () => import('../views/NetworkError.vue'),
     }
   ]
 })
