@@ -39,6 +39,7 @@ const linkTo = () => {
   border: 3px solid rgb(255, 239, 94);
   background-color: rgb(255, 239, 94);
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.137);
+  margin-top: 1rem;
 }
 
 .text {
