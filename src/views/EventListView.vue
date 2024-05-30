@@ -3,6 +3,7 @@ import { ref, onMounted, computed, watchEffect } from 'vue';
 import EventService from '@/services/EventService';
 import EventCard from '@/components/EventCard.vue';
 import { useRouter } from "vue-router";
+import nProgress from 'nprogress';
 
 const router = useRouter();
 
@@ -21,6 +22,7 @@ const hasNextPage = computed(() => {
 })
 
 onMounted(() => {
+  nProgress.start();
   watchEffect(() => {
     events.value = null;
     EventService.getEvents(2, currentPage.value)
@@ -30,6 +32,9 @@ onMounted(() => {
       })
       .catch(() => {
         router.push({ name: 'network-error' })
+      })
+      .finally(() => {
+        nProgress.done();
       })
   })
 }) 
