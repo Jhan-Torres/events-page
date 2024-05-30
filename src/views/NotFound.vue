@@ -1,10 +1,19 @@
 <script setup>
 import GoBackButton from '@/components/GoBackButton.vue';
+
+const props = defineProps({
+  resource: {
+    type: String,
+    required: true,
+    default: 'page'
+  }
+})
 </script>
 
 <template>
   <div class="not-found">
-    <h1>Page not found</h1>
+    <h1>Oops!</h1>
+    <h2>The {{ resource }} you're looking for is not here.</h2>
     <GoBackButton :case="'notFound'" />
   </div>
 </template>

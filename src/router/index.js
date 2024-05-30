@@ -48,10 +48,18 @@ const router = createRouter({
       component: () => import('../views/AboutView.vue') //importing component when necessary only
     },
     {
+      //pathMatch(.*)*  matches all routes that do not exists
       path: '/:pathMatch(.*)*',
       name: 'not-found',
-      component: () => import('../views/NotFound.vue')
+      component: () => import('../views/NotFound.vue'),
+      props: () => ({ resource: 'page' })
     },
+    {
+      path: '/404/:resource',
+      name: '404',
+      component: () => import('../views/NotFound.vue'),
+      props: true
+    }
   ]
 })
 

@@ -22,9 +22,8 @@ onMounted(() => {
       event.value = response.data; //3- obtain event data, stored in "event" variable and update the event info on template
     })
     .catch((error) => {
-      if (error.response.status === 404) {
-        router.push({ name: 'not-found' })
-      }
+      console.log(error);
+      router.push({ name: '404', params: { resource: 'event' } })
     })
 })
 </script>
