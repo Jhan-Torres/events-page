@@ -8,4 +8,7 @@ const props = defineProps({
 
 <template>
   <p>Register for the event here</p>
+  <button>
+    Register Me
+  </button>
 </template>
