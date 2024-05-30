@@ -26,6 +26,11 @@ const props = defineProps({
 }
 
 h1 {
-  color: red
+  color: rgb(206, 66, 66);
+  font-size: 5rem;
+}
+
+h2 {
+  font-size: 2rem;
 }
 </style>
