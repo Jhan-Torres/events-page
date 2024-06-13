@@ -32,7 +32,7 @@ const router = createRouter({
         },
       ],
     },
-    // Redirect to events page "afterEvent(.*)" will capture everything else  
+    // Redirect to events page when letters missing."afterEvent(.*)" will capture everything else  
     {
       path: '/event/:afterEvent(.*)',
       redirect: (to) => {
